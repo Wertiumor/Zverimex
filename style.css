@@ -1,0 +1,20 @@
+*{
+    font-family: 'Courier New', Courier, monospace ;
+    font-weight: bold;
+}
+body{
+    background-image: url(asset/bg.jpg);
+    /* background-position: center; */
+    background-size: cover;
+    }
+form{
+    background-color: rgba(179, 215, 35, 0.796);
+}
+h1,h2,h3{
+    color: rgb(194, 33, 33);
+    font-weight: bolder;
+}
+
+input[type='number']{
+    width: 120px;
+} 

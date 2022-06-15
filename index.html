@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="skript.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Zverimex objednávka</title>
+</head>
+
+<body>
+    <div class="container my-2 w-75 col-lg-4 offset-lg-4 col-md-6 offset-md-3">
+        <form class="border rounded pt-4 pb-2 px-4" action="" name="krmiva">
+            <h3 class="text-center">Prodej Krmiv</h3>
+
+            <select name="krmivo" size="1">
+                <option value="150" selected>Psí žrádlo 150 Kč/kg
+                <option value="120">Kočičí žrádlo 120 Kč/kg
+                <option value="50">Žrádlo pro rybičky 50 Kč/kg
+                <option value="800">Žrádlo pro tygra 800 Kč/kg
+            </select>
+
+            <hr>
+            <div class="form-group">
+                <label for="pocetKg">Kilogramů krmiva</label>
+                <select name="pocetKg" id="kg" onchange="kolikKg(this)">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <hr>
+            <div name="kvalita">
+                <input type="checkbox" id="cb1" value="" onclick="kvalita()">Bio kvalita (+30% ze základní ceny) <br>
+                <input type="checkbox" id="cb2" value="" onclick="kvalita()">Extra premium kvalita (+50% ze základní ceny) <br>
+                <input type="checkbox" id="cb3" value=""onclick="kvalita()">Extra nekvalita pro chudé (-15% ze základní ceny) <br>
+                <input type="checkbox" id="cb4" value=""onclick="kvalita()">Dárkové balení (+500Kč)
+         
+            </div>
+            <hr>
+            <h2>Způsob dopravy</h2>
+            <div class="form-check form-check-inline text-sm-left">
+                <input class="form-check-input" type="radio" name="typ" value="1" oninput="extra(typ)">
+                <label class="form-check-label" for="typ">Osobní odběr (bez příplatku)</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="typ" value="1.1" oninput="extra(typ)">
+                <label class="form-check-label" for="typ">Firemní kurýr (+10 procent z aktuální ceny krmiva)</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="typ" value="1" oninput="extra2(typ)">
+                <label class="form-check-label" for="typ">Česká pošta (+250 Kč)</label>
+            </div>
+            <hr>
+
+
+            <div class="form-group">
+                <label for="kolik">Kolik jsi ochotný zaplatit:</label>
+                <input class="form-control form-control-sm" type="text" value="0" name="kolik">
+                <button type="submit" class="btn btn-secondary" onclick="vejduSe(event)">Výjde mi můj Cash!</button>
+            </div>
+            <div class="form-group">
+                <label for="vLimitu" class="sr-only"></label>
+                <input class="form-control form-control-sm" type="text" name="vLimitu" value="" readonly>
+            </div>
+            <div class="form-group">
+                <button name="spocitej" class="btn btn-secondary" onclick="sum(event)">Spočti</button>
+            </div>
+            <div class="form-group">
+                <h3 for="cena">Celková cena:</h3>
+                <input class="form-control form-control-sm" type="text" name="cena" value="" readonly>
+            </div>
+            <div class="form-group">
+                <h3 for="email">Email:</h3>
+                <input class="form-control form-control-sm" type="email" name="email" value="@gmail.com"
+                    onclick="handleMailInput(event)">
+                <button type="submit" class="btn btn-secondary" onclick="submitMail(event)">Odeslat</button>
+            </div>
+    </div>
+    </form>
+</body>
+
+</html>
